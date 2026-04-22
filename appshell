@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+import CitizenReport from './components/CitizenReport';
+import NGODashboard from './components/NGODashboard';
+import VolunteerPortal from './components/VolunteerPortal';
+
+const App = () => {
+  const [view, setView] = useState('citizen'); // citizen | ngo | volunteer
+
+  return (
+    <div className="app-wrapper" style={{ backgroundColor: '#0a0f1e', minHeight: '100vh' }}>
+      <nav className="top-nav">
+        <button onClick={() => setView('citizen')}>Citizen</button>
+        <button onClick={() => setView('ngo')}>NGO</button>
+        <button onClick={() => setView('volunteer')}>Volunteer</button>
+      </nav>
+
+      <main>
+        {view === 'citizen' && <CitizenReport />}
+        {view === 'ngo' && <NGODashboard />}
+        {view === 'volunteer' && <VolunteerPortal />}
+      </main>
+      
+      {/* Toast Notification Mount Point */}
+      <div id="toast-root"></div>
+    </div>
+  );
+};
