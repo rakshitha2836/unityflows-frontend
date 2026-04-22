@@ -1,0 +1,50 @@
+.dashboard {
+  background-color: #0a0f1e;
+  padding: 20px;
+  font-family: 'DM Mono', monospace;
+}
+
+.taskCard {
+  background: #161b2c;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+.progressBar {
+  height: 8px;
+  width: 100%;
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #22c55e); /* Blue to Green */
+}
+
+/* Modal Slide Up */
+.modalOverlay {
+  position: fixed;
+  bottom: 0; left: 0; right: 0; top: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: flex-end;
+}
+
+.modalContent {
+  width: 100%;
+  background: #161b2c;
+  border-radius: 20px 20px 0 0;
+  padding: 30px;
+  transform: translateY(0);
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
